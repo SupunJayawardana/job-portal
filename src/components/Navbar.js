@@ -1,11 +1,50 @@
-import Link from 'next/link';
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact Us" },
+];
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+
   return (
-    <nav style={{ padding: '20px', background: '#f4f4f4', display: 'flex', gap: '20px' }}>
-      <Link href="/">Home</Link>
-      <Link href="/about">About</Link>
-      <Link href="/contact">Contact</Link>
-    </nav>
+    <header className="navbar no-print">
+      <div className="nav-inner">
+        <Link href="/" className="brand" onClick={() => setOpen(false)}>
+          <span className="brand-mark">UoVT</span>
+          <span className="brand-text">
+            Job - Portal
+            <small>Navigation Bar</small>
+          </span>
+        </Link>
+        <button
+          className="nav-toggle"
+          aria-label="Toggle menu"
+          aria-expanded={open}
+          onClick={() => setOpen(!open)}
+        >
+          ☰
+        </button>
+        <nav className={open ? "nav-links open" : "nav-links"}>
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className={pathname === l.href ? "active" : ""}
+              onClick={() => setOpen(false)}
+            >
+              {l.label}
+            </Link>
+          ))}
+        </nav>
+      </div>
+    </header>
   );
 }

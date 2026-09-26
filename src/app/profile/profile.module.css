@@ -1,0 +1,21 @@
+/* Unique Profile Theme Colors */
+.profileWrapper {
+  --profile-bg: #121829;
+  --profile-card: #1f293d;
+  --profile-accent: #06b6d4; /* Cyan accent color */
+  --profile-text: #f1f5f9;
+
+  background-color: var(--profile-bg);
+  color: var(--profile-text);
+  min-height: 80vh;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+.profileCard {
+  background-color: var(--profile-card);
+  padding: 2rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--profile-accent);
+}

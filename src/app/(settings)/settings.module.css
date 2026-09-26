@@ -1,0 +1,21 @@
+/* Unique settings Theme Colors */
+.settingsWrapper {
+  --settings-bg: #121829;
+  --settings-card: #1f293d;
+  --settings-accent: #06b6d4; /* Cyan accent color */
+  --settings-text: #f1f5f9;
+
+  background-color: var(--settings-bg);
+  color: var(--settings-text);
+  min-height: 80vh;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+.settingsCard {
+  background-color: var(--settings-card);
+  padding: 2rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--settings-accent);
+}

@@ -1,9 +1,8 @@
-export default function Home() {
+export default function Contact() {
   return (
     <div style={{ padding: "50px", fontFamily: "sans-serif", textAlign: "center" }}>
-      <h1>Hello World</h1>
-      <p>Welcome to my Next.js app!</p>
+      <h1>Contact Us</h1>
+      <p>Welcome to the Contact page!</p>
     </div>
   );
 }
-
